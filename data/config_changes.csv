@@ -1,0 +1,8 @@
+change_id,timestamp,time_offset,service_id,parameter,old_value,new_value,author,change_type,approved,risk_score,notes
+cfg-1001,2026-11-01T09:15:00Z,T-3600,catalog-service,cache_ttl_sec,300,600,alex.mercer@sre.corp,cache_tuning,true,0.12,Routine cache TTL increase for product catalog
+cfg-1002,2026-11-01T10:00:00Z,T-900,user-profile,max_connections,50,75,vikashini@sre.corp,connection_tuning,true,0.18,Minor pool scale up
+cfg-1003,2026-11-01T10:41:18Z,T+42,network-gateway,proxy_read_timeout_ms,5000,250,ops-deploy-bot,ingress_timeout,true,0.96,Candidate Root Cause: Aggressive proxy read timeout lowered from 5000ms to 250ms. Truncated valid backend response windows.
+cfg-1004,2026-11-01T10:45:00Z,T+60,notification-service,batch_size,100,100,sashika@sre.corp,noop,true,0.05,Configuration re-validation
+cfg-2001,2026-11-01T10:46:11Z,T+95,payments-service,connection_pool_max,100,250,dev-checkout-team,pool_scaling,true,0.42,Downstream Decoy: Applied 47s AFTER anomaly onset (T+48) and farthest downstream in dependency chain. Rejected as root cause.
+cfg-2002,2026-11-01T10:50:00Z,T+150,cart-service,eviction_policy,allkeys-lru,volatile-lru,ops-deploy-bot,cache_policy,true,0.22,Routine memory optimization
+cfg-2003,2026-11-01T10:55:00Z,T+210,database-cluster,shared_buffers,4GB,4GB,dba-lead@sre.corp,noop,true,0.08,DB parameter check

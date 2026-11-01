@@ -1,0 +1,5 @@
+change_id,timestamp,time_offset,service_id,parameter,old_value,new_value,author,source,status,threat_level,drift_detected,notes
+cfg-9001,2026-11-01T10:40:05Z,T+35,network-gateway,rate_limit_burst_size,500,20,unauthorized_ingress_agent,direct_etcd_edit,flagged_sabotage,HIGH,true,Shadow drift: Unauthorized drop in burst capacity directly written to etcd without GitOps approval
+cfg-9002,2026-11-01T10:44:12Z,T+55,auth-service,jwt_clock_skew_seconds,60,0,ci-cd-runner-untrusted,hot_reload,suspicious,MEDIUM,true,Clock skew margin zeroed out causing early expiration tokens during transit
+cfg-9003,2026-11-01T10:47:30Z,T+110,checkout-service,circuit_breaker_trip_threshold,0.50,0.05,dev-hotfix-script,env_override,suspicious,HIGH,true,Overly aggressive circuit breaker tripping at only 5% error rate accelerating cascade
+cfg-9004,2026-11-01T10:52:10Z,T+170,payments-service,tls_renegotiation,disabled,enabled,unknown_shadow_ssh,manual_cli,flagged_sabotage,CRITICAL,true,Direct SSH terminal parameter alteration violating Zero Trust policy
